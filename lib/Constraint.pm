@@ -164,6 +164,17 @@ Um, don't do that yet unless you know what you are doing.
 
 You wish!  This module can't help you there.
 
+=head1 SOURCE AVAILABILITY
+
+This source is part of a SourceForge project which always has the
+latest sources in CVS, as well as all of the previous releases.
+
+    https://sourceforge.net/projects/brian-d-foy/
+
+If, for some reason, I disappear from the world, one of the other
+members of the project can shepherd this module appropriately.
+
+
 =head1 AUTHOR
 
 brian d foy, C<< <comdog@panix.com> >>
@@ -232,3 +243,4 @@ __PACKAGE__->add_constraint(
 	'run' => sub { 1 },
 	);
 
+1;
