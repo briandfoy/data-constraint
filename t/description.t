@@ -22,8 +22,7 @@ is( $constraint->description,  'True if the value is defined',
 my $constraint = $class->get_by_name( 'test' );
 
 isa_ok( $constraint, $class );
-can_ok( $constraint, qw(description), 
-	"'test' knows about description message" );
+can_ok( $constraint, qw(description) );
 
 
 is( $constraint->description,  "", 
