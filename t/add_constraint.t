@@ -14,7 +14,8 @@ my $class = 'Data::Constraint';
 my $constraint = $class->get_by_name( 'fake' ); # no such thing
 
 ok( ! defined $constraint, 'Non-existent constraint returns undef' );
-ok( ! isa( $constraint, $class ) );
+ok( ! isa( $constraint, $class ), 
+	'Non-existent constraint is not an object' );
 }
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
