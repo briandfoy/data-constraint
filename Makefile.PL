@@ -29,12 +29,12 @@ WriteMakefile
 			
         'PM'       => 
         	{
-            'lib/LastWeek.pm'  => '$(INST_LIBDIR)/Constraint.pm',
+            'lib/Constraint.pm'  => '$(INST_LIBDIR)/Constraint.pm',
             },
           
         'MAN3PODS' =>
         	{
-        	'lib/LastWeek.pm' => '$(INST_MAN3DIR)/Data::Constraint.3',
+        	'lib/Constraint.pm' => '$(INST_MAN3DIR)/Data::Constraint.3',
         	},
         	
         clean => { FILES => 'Data-Manifest-* t/test_manifest' },
