@@ -1,4 +1,7 @@
+# $Id$
 package Data::Constraint;
+use strict;
+use vars qw($VERSION);
 
 =head1 NAME
 
@@ -6,21 +9,33 @@ Data::Constraint - prototypical value checking
 
 =head1 SYNOPSIS
 
-
+	use Data::Constraint;
+	
+	my $constraint = Data::Constraint->add_constraint(
+		'name_of_condition',
+		run         => sub { $_[1] => /Perl/ },
+		description => "String should have 'Perl' in it";
+		);
+		
+	if( $constraint->check( 'Java' ) ) 
+		{
+		...
+		}
+		
 =head1 DESCRIPTION
 
-A constraint is some sort of condition on datum.  This module checks
-one condition against one value at a time, and I call the thing
-that checks that condition the "constraint".  A constraint returns
-true or false, and that's it.  It should have no side effects, it
-should not change program flow, and it should mind its own business.
-Let the thing that calls the constraint figure out what to do with it.
-I want something that says "yes" or "no" (and I discuss why this needs
-a fancy module later).
+A constraint is some sort of condition on a datum.  This module checks
+one condition against one value at a time, and I call the thing that
+checks that condition the "constraint".  A constraint returns true or
+false, and that's it.  It should have no side effects, it should not
+change program flow, and it should mind its own business. Let the
+thing that calls the constraint figure out what to do with it. I want
+something that says "yes" or "no" (and I discuss why this needs a
+fancy module later).
 
-For instance, the constraint
-may state that the value has to be a number.  The condition may be
-something that ensures the value does not have non-digits.
+For instance, the constraint may state that the value has to be a
+number.  The condition may be something that ensures the value does
+not have non-digits.
 
 	$value =~ /^\d+\z/
 
@@ -111,61 +126,109 @@ but it won't be the value I started with, necessarily.
 
 =head2 Adding a new constraint
 
+Add a new constraint with the class method C<add_constraint>. The
+first argument is the name you want to give the constraint.  The
+rest of the arguments are optional, although I need to add a 
+C<run> key if I want the constraint to do anything useful: its
+value should be something that returns true when the value 
+satisfies the condition (so a constant is probably not what
+you want).  An anonymous subroutine is probably what you want.
+
 	Data::Constraint->add_constraint(
 		$name_of_constraint,
-		'run' => sub {...}, 
+		'run' => sub {...},
 		[ @optional_arguments ],
 		);
 		
+Once I create the constraint, it exists forever (for now).  I get
+back the constraint object:
+
+	my $constraint = Data::Constraint->add_constraint( ... );
+	
+The object sticks around after C<$constraint> goes out of scope.
+The C<$constraint> is just a reference to the object.  I can get
+another reference to it through C<get_by_name()>.  See L<"Deleting
+a constraint"> if you want to get rid of them.
+		
 =head2 Modifying a constraint
 
+Um, don't do that yet unless you know what you are doing.
+
+=head2 Deleting a constraint
+
+	Data::Constraint->delete_by_name( $name );
+	
+	Data::Constraint->delete_all();
+	
 =head2 Doing anything you want
 
 You wish!  This module can't help you there.
 
 =head1 AUTHOR
 
-=head1 
+brian d foy, C<< <comdog@panix.com> >>
 
 =cut
+
+$VERSION = 0.1;
 
 use base qw(Class::Prototyped);
 
 __PACKAGE__->reflect->addSlots(
-	(
 	check            => sub {		
-		$_[0]->constraint->check( $_[1] );
+		$_[0]->run( $_[1] ) ? 1 : 0;
 		},
 		
 	# the list of added constraints	
 	constraints    => {},
 	
-	# XXX need a description
 	add_constraint => sub {
 		my $class = shift;
-		my $name  = shift;
+		my $name  = shift;		
 		
 		my $constraint = $class->new(
 			'name'   => $name,
 			'class*' => $class,
-			@_
+			@_,
 			);
 			
 		$class->constraints->{$name} = $constraint;
 		},
-		
-	description => sub { "Descriptions don't work yet" },
 	
+	get_all_names => sub {
+		return sort keys %{ $_[0]->constraints };
+		},
+		
+	get_by_name => sub {
+		$_[0]->constraints->{ $_[1] };
+		},
+		
+	delete_by_name => sub {
+		delete $_[0]->constraints->{ $_[1] };
+		},
+
+	delete_all => sub {
+		$_[0]->constraints( {} );
+		},
+		
+	description => sub { "" },
+	run         => sub { 1  },
 	);
 	
 __PACKAGE__->add_constraint(
 	'defined',
-	'run' => sub { defined $_[0] },
+	'run'         => sub { defined $_[1] },
+	'description' => 'True if the value is defined',
 	);
 	
 __PACKAGE__->add_constraint(
 	'ordinal',
-	'run' => sub { $_[0] !~ /\D/ },
+	'run'         => sub { $_[1] =~ /^\d+\z/ },
+	'description' => 'True if the value is has only digits',
 	);
 	
+__PACKAGE__->add_constraint(
+	'test',
+	'run' => sub { 1 },
+	);
 	
