@@ -35,7 +35,7 @@ WriteMakefile
 			'lib/Constraint.pm' => '$(INST_MAN3DIR)/Data::Constraint.3',
 			},
 
-		clean => { FILES => 'Data-*' },
+		clean => { FILES => 'Data-* *.bak *.old' },
 		);
         
 1;
