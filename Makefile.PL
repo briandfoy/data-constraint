@@ -1,21 +1,7 @@
 # $Id$
 use ExtUtils::MakeMaker;
 
-eval "use Test::Manifest";
-
-unless( $@ )
-	{
-	no warnings;
-
-	*ExtUtils::MM_Any::test_via_harness = sub
-		{
-		my($self, $perl, $tests) = @_;
-	
-		return qq|	$perl "-MTest::Manifest" | .
-			qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
-			qq|'\$(INST_ARCHLIB)')"\n|;
-		};
-	}
+eval "use Test::Manifest 1.14";
 
 WriteMakefile
 		(
