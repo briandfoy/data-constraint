@@ -164,26 +164,64 @@ Um, don't do that yet unless you know what you are doing.
 
 You wish!  This module can't help you there.
 
-=head1 SOURCE AVAILABILITY
-
-This source is part of a SourceForge project which always has the
-latest sources in CVS, as well as all of the previous releases.
-
-    http://sourceforge.net/projects/brian-d-foy/
-
-If, for some reason, I disappear from the world, one of the other
-members of the project can shepherd this module appropriately.
-
-
-=head1 AUTHOR
-
-brian d foy, C<< <comdog@panix.com> >>
+=head1 METHODS
 
 =cut
 
 $VERSION = sprintf "%d.%02d", q$Revision$ =~ m/(\d+) \. (\d+)/xg;
 
 use base qw(Class::Prototyped);
+
+=over 4
+
+=item check( VALUE )
+
+Apply the constraint to the VALUE.
+
+=item add_constraint( NAME, KEY-VALUES )
+
+Added a constraint with name NAME. Possible keys and values:
+
+	run            reference to subroutine to run
+	description    string that decribes the constraint
+	
+Example:
+
+	Data::Constraint->add_constraint(
+		$name_of_constraint,
+		'run'       => sub {...},
+		description => 'This is what I do",
+		);
+
+=item get_all_names
+
+Return a list of all the defined constraints.
+
+=item get_by_name( CONSTRAINT_NAME )
+
+Return the constraint with name CONSTRAINT_NAME. This is 
+
+=item delete_by_name( CONSTRAINT_NAME )
+
+Delete the constraint with name CONSTRAINT_NAME. It's no longer available.
+
+=item delete_all()
+
+Delete all the constraints, even the default ones.
+
+=item description
+
+Return the description. The default description is the empty string. You 
+should supply your own description with C<add_constraint>.
+
+=item run
+
+Return the description. The default description is the empty string. You 
+should supply your own description with C<add_constraint>.
+
+=back
+
+=cut
 
 __PACKAGE__->reflect->addSlots(
 	check            => sub {
@@ -242,5 +280,27 @@ __PACKAGE__->add_constraint(
 	'test',
 	'run' => sub { 1 },
 	);
+
+=head1 SOURCE AVAILABILITY
+
+This source is part of a SourceForge project which always has the
+latest sources in CVS, as well as all of the previous releases.
+
+    http://sourceforge.net/projects/brian-d-foy/
+
+If, for some reason, I disappear from the world, one of the other
+members of the project can shepherd this module appropriately.
+
+=head1 AUTHOR
+
+brian d foy, C<< <comdog@panix.com> >>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2004-2006, brian d foy, All Rights Reserved.
+
+You may redistribute this under the same terms as Perl itself.
+
+=cut
 
 1;
