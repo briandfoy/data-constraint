@@ -184,7 +184,7 @@ Added a constraint with name NAME. Possible keys and values:
 
 	run            reference to subroutine to run
 	description    string that decribes the constraint
-	
+
 Example:
 
 	Data::Constraint->add_constraint(
@@ -199,7 +199,7 @@ Return a list of all the defined constraints.
 
 =item get_by_name( CONSTRAINT_NAME )
 
-Return the constraint with name CONSTRAINT_NAME. This is 
+Return the constraint with name CONSTRAINT_NAME. This is
 
 =item delete_by_name( CONSTRAINT_NAME )
 
@@ -211,12 +211,12 @@ Delete all the constraints, even the default ones.
 
 =item description
 
-Return the description. The default description is the empty string. You 
+Return the description. The default description is the empty string. You
 should supply your own description with C<add_constraint>.
 
 =item run
 
-Return the description. The default description is the empty string. You 
+Return the description. The default description is the empty string. You
 should supply your own description with C<add_constraint>.
 
 =back

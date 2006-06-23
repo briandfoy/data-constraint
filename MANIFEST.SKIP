@@ -9,3 +9,4 @@ CVS
 \.DS_Store
 Makefile$
 MANIFEST.SKIP
+.lwpcookies
