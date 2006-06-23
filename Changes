@@ -1,5 +1,8 @@
 # $Id$
 
+1.08 - Fri Jun 23 12:56:35 2006
+	* Distro cleanups and update to email address. No code changes.
+
 1.06 - Fri Jun 16 12:32:04 2006
 	* Distro and POD fixes, no need to upgrade
 
