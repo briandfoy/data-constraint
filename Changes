@@ -1,12 +1,8 @@
 # $Id$
 
-1.07 - Fri Jun 23 12:47:44 2006
-	* Distro cleanups and doc fixes. Upgrade to get my current email
-	address :)
-
 1.06 - Fri Jun 16 12:32:04 2006
 	* Distro and POD fixes, no need to upgrade
 
 1.04 - Mon Aug  9 14:49:56 2004
-* First version of Class::Prototyped-based data validator
+	* First version of Class::Prototyped-based data validator
 
