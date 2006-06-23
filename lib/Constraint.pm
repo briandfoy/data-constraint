@@ -293,7 +293,7 @@ members of the project can shepherd this module appropriately.
 
 =head1 AUTHOR
 
-brian d foy, C<< <comdog@panix.com> >>
+brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT
 
