@@ -1,5 +1,9 @@
 # $Id$
 
+1.09 - Sat Jul  8 16:08:55 2006
+	* Dist fix to get PAUSE to accept this thing. It didn't like 1.08
+	for some reason, so let's try it with another version number.
+
 1.08 - Sat Jul  8 15:55:32 2006
 	* Update to dist with no interesting code changes
 
