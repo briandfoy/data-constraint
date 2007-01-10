@@ -1,5 +1,9 @@
 # $Id$
 
+1.10 - Tue Jan  9 22:05:27 2007
+	* updated copyright and license info
+	* no code changes, so no need to upgrade
+
 1.09 - Sat Jul  8 16:08:55 2006
 	* Dist fix to get PAUSE to accept this thing. It didn't like 1.08
 	for some reason, so let's try it with another version number.
