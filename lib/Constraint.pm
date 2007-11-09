@@ -3,6 +3,9 @@ package Data::Constraint;
 use strict;
 use vars qw($VERSION);
 
+use warnings;
+no warnings;
+
 =head1 NAME
 
 Data::Constraint - prototypical value checking
@@ -168,7 +171,7 @@ You wish!  This module can't help you there.
 
 =cut
 
-$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/(\d+) \. (\d+)/xg;
+$VERSION = 1.12;
 
 use base qw(Class::Prototyped);
 

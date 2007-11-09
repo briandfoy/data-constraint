@@ -1,11 +1,15 @@
 # $Id$
 use ExtUtils::MakeMaker;
 
+require 5.006;
+
 eval "use Test::Manifest 1.14";
 
 WriteMakefile
 	(
 	'NAME'          => 'Data::Constraint',
+	'ABSTRACT'      => 'prototypical value checking',
+
 	'VERSION_FROM'  => 'lib/Constraint.pm',
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
