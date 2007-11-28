@@ -1,5 +1,9 @@
 # $Id$
 
+1.13 - Wed Nov 28 12:34:17 2007
+	* The last version seems to have had some indexing problems,
+	so let's try again.
+
 
 1.12 - Fri Nov  9 05:44:59 2007
 	* updates for the move from CVS to SVN, and the latest kwalitee
