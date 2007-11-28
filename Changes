@@ -1,8 +1,5 @@
 # $Id$
 
-1.12 - Wed Nov 28 12:19:45 2007
-	* Clean up for the move from CVS to SVN
-	* No need to upgrade
 
 1.12 - Fri Nov  9 05:44:59 2007
 	* updates for the move from CVS to SVN, and the latest kwalitee
