@@ -9,7 +9,6 @@ WriteMakefile
 	(
 	'NAME'          => 'Data::Constraint',
 	'ABSTRACT'      => 'prototypical value checking',
-
 	'VERSION_FROM'  => 'lib/Constraint.pm',
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
