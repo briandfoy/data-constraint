@@ -12,8 +12,7 @@ WriteMakefile
 	'VERSION_FROM'  => 'lib/Constraint.pm',
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-
-	
+ 	
 	'PREREQ_PM' => {
 		'Test::More'        => '0',
 		'Class::Prototyped' => '0',

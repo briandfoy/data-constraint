@@ -16,7 +16,7 @@ Data::Constraint - prototypical value checking
 
 	my $constraint = Data::Constraint->add_constraint(
 		'name_of_condition',
-		run         => sub { $_[1] => /Perl/ },
+		run         => sub { $_[1] =~ /Perl/ },
 		description => "String should have 'Perl' in it";
 		);
 
@@ -300,7 +300,7 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2004-2007 brian d foy.  All rights reserved.
+Copyright (c) 2004-2008 brian d foy.  All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
