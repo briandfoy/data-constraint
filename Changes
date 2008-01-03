@@ -1,5 +1,9 @@
 # $Id$
 
+1.15 - Thu Jan  3 12:13:19 2008
+	* Updated for minor doc patch (RT #32028)
+	* No need to upgrade
+
 1.14 - Wed Nov 28 12:58:56 2007
 	* Cleanus for the move from CVS to SVN
 	* No need to upgrade
