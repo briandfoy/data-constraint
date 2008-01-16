@@ -171,7 +171,7 @@ You wish!  This module can't help you there.
 
 =cut
 
-$VERSION = 1.15;
+$VERSION = '1.12';
 
 use base qw(Class::Prototyped);
 
@@ -287,7 +287,7 @@ __PACKAGE__->add_constraint(
 =head1 SOURCE AVAILABILITY
 
 This source is part of a SourceForge project which always has the
-latest sources in CVS, as well as all of the previous releases.
+latest sources in SVN, as well as all of the previous releases.
 
 	http://sourceforge.net/projects/brian-d-foy/
 
