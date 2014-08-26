@@ -1,33 +1,32 @@
 use strict;
 
-use UNIVERSAL qw(isa);
-
-use Data::Constraint;
 use Test::More 0.95;
 
 my $class = 'Data::Constraint';
+use_ok( $class );
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-{
-my $constraint = $class->get_by_name( 'defined' );
+subtest 'defined' => sub {
+	my $constraint = $class->get_by_name( 'defined' );
 
-isa_ok( $constraint, 'Data::Constraint' );
-can_ok( $constraint, qw(check description run) );
-}
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-{
-my $constraint = $class->get_by_name( 'ordinal' );
-
-isa_ok( $constraint, 'Data::Constraint' );
-can_ok( $constraint, qw(run description check) );
-}
+	isa_ok( $constraint, $class );
+	can_ok( $constraint, qw(check description run) );
+	};
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-{
+subtest 'ordinal' => sub {
+	my $constraint = $class->get_by_name( 'ordinal' );
 
-my $constraint = $class->get_by_name( 'fake' ); # no such thing
+	isa_ok( $constraint, $class );
+	can_ok( $constraint, qw(run description check) );
+	};
 
-ok( ! defined $constraint, 'Non-existent constraint returns undef' );
-ok( ! isa( $constraint, 'Data::Constraint' ) );
-}
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+subtest 'fake' => sub {
+	my $constraint = $class->get_by_name( 'fake' ); # no such thing
+
+	ok( ! defined $constraint, 'Non-existent constraint returns undef' );
+	ok( ! isa_ok( $constraint, $class ) );
+	};
+
+done_testing();
