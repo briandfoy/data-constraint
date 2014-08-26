@@ -1,5 +1,3 @@
-# $Id$
-
 use Test::More tests => 27;
 
 use Data::Constraint;
@@ -56,4 +54,3 @@ sub object_ok
 	isa_ok( $_[0], $class );
 	can_ok( $_[0], qw(check) );
 	}
-	

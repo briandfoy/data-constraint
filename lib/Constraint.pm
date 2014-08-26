@@ -1,4 +1,3 @@
-# $Id$
 package Data::Constraint;
 use strict;
 use vars qw($VERSION);
