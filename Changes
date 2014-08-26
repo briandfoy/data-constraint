@@ -1,6 +1,10 @@
 1.16 - Wed Jan 16 04:26:43 2008
 	* just a bump of the version for PAUSE
 
+1.17 - Tue Aug 26 14:01:43 2014
+	* Modernizing this module
+	* Get rid of UNIVERSAL::isa, RT #98151
+
 1.12 - Wed Jan 16 04:24:50 2008
 	* Updated for the move from CVS to SVN. No need to upgrade.
 
