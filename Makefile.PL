@@ -1,8 +1,8 @@
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.48;
 
 require 5.006;
 
-eval "use Test::Manifest 1.14";
+eval "use Test::Manifest 2.01";
 
 WriteMakefile
 	(
