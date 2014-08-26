@@ -170,7 +170,7 @@ You wish!  This module can't help you there.
 
 =cut
 
-$VERSION = '1.16';
+$VERSION = '1.17';
 
 use base qw(Class::Prototyped);
 
