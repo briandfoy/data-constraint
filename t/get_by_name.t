@@ -26,7 +26,6 @@ subtest 'fake' => sub {
 	my $constraint = $class->get_by_name( 'fake' ); # no such thing
 
 	ok( ! defined $constraint, 'Non-existent constraint returns undef' );
-	ok( ! isa_ok( $constraint, $class ) );
 	};
 
 done_testing();
