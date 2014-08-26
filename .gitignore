@@ -2,3 +2,4 @@ MYMETA*
 blib
 Makefile
 pm_to_blib
+*.bak
