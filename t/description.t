@@ -1,6 +1,6 @@
-use Test::More tests => 9;
 
 use Data::Constraint;
+use Test::More 0.95;
 
 my $class = 'Data::Constraint';
 

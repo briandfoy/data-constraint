@@ -1,4 +1,4 @@
-use Test::More tests => 2;
+use Test::More 0.95;
 
 use Data::Constraint;
 

@@ -1,9 +1,9 @@
 use strict;
 
-use Test::More tests => 6;
 use UNIVERSAL qw(isa);
 
 use Data::Constraint;
+use Test::More 0.95;
 
 my $class = 'Data::Constraint';
 
