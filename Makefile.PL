@@ -2,35 +2,54 @@ require 5.008;
 use strict;
 use warnings;
 
-my $github    = 'https://github.com/briandfoy/';
-my $main_file = 'lib/Data/Constraint.pm';
+use File::Spec::Functions qw(catfile);
+
+my $module    = 'Data::Constraint';
+my $github    = 'https://github.com/briandfoy/data-constraint';
+my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
 my %WriteMakefile = (
 	'MIN_PERL_VERSION' => 5.008,
 
-	'NAME'          => 'Data::Constraint',
+	'NAME'          => $module,
 	'ABSTRACT_FROM' => $main_file,
 	'VERSION_FROM'  => $main_file,
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
- 	
-	'PREREQ_PM' => {
-		'Test::More'        => '0.95',
+
+ 	'CONFIGURE_REQUIRES' => {
+		'ExtUtils::MakeMaker' => '6.64',
+		},
+
+	'BUILD_REQUIRES' => {
+		},
+
+	'TEST_REQUIRES' => {
+		'Test::More' => '0.94',
+		},
+
+	'PREREQ_PM'     => {
 		'Class::Prototyped' => '0',
 		},
 
-	META_MERGE => {
-			resources => {
-				bugtracker => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Data-Constraint',
-		  		repository => 'git://github.com/briandfoy/data-constraint.git',
+	'META_MERGE' => {
+		'meta-spec' => { version => 2 },
+		keywords => [ 'module', 'distribution', 'test' ],
+		resources => {
+			repository => {
+				type => 'git',
+				url  => "$github.git",
+				web  => $github,
 				},
-			keywords => [ 'module', 'distribution', 'test' ],
-	  		},
+			bugtraker => {
+				web    => "$github/issues",
+				},
+			homepage => $github,
+			},
+		},
 	
 	clean => { FILES => 'Data-* *.bak *.old' },
 	);
-        
-1;
 
 sub arguments { \%WriteMakefile }
 
