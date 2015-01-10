@@ -51,7 +51,7 @@ my %WriteMakefile = (
 			},
 		},
 	
-	clean => { FILES => 'Data-* *.bak *.old' },
+	clean => { FILES => "$dist-*" },
 	);
 
 sub arguments { \%WriteMakefile }
