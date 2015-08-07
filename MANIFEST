@@ -1,6 +1,7 @@
 .travis.yml
 Changes
 examples/README
+INSTALL.SKIP
 lib/Data/Constraint.pm
 LICENSE
 Makefile.PL
