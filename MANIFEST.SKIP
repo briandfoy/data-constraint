@@ -60,3 +60,4 @@
 
 ^Data-
 \.releaserc
+\.travis\.yml
