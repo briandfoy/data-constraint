@@ -5,6 +5,8 @@ use vars qw($VERSION);
 use warnings;
 no warnings;
 
+=encoding utf8
+
 =head1 NAME
 
 Data::Constraint - prototypical value checking
