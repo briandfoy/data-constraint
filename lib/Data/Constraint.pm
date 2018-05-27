@@ -1,6 +1,5 @@
 package Data::Constraint;
 use strict;
-use vars qw($VERSION);
 
 use warnings;
 no warnings;
@@ -172,7 +171,7 @@ You wish!  This module can't help you there.
 
 =cut
 
-$VERSION = '1.171';
+our $VERSION = '1.171';
 
 use base qw(Class::Prototyped);
 
