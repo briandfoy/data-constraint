@@ -1,5 +1,8 @@
 Revision history for Perl module Data::Constraint
 
+1.171 2018-06-03T14:07:44Z
+	* Change to the Artistic License 2.0
+
 1.16 - 2008-01-16
 	* just a bump of the version for PAUSE
 
