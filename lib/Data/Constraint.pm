@@ -83,7 +83,7 @@ I needed to generate different warnings for different failures.
 
 I can get a constraint object by asking for it.
 
-	my $constraint = Data::Constraints->get_by_name( $name );
+	my $constraint = Data::Constraint->get_by_name( $name );
 
 If no constraint has that name, I get back the default constraint which
 always returns true. Or should it be false?  I guess that depends on
@@ -94,7 +94,7 @@ names. The names are just simple strings, so they have no
 magic.  Maybe this should be a hash so you can immediately use
 the value of the key you want.
 
-	my @names = Data::Constraints->get_all_names;
+	my @names = Data::Constraint->get_all_names;
 
 Once I have the constraint, I give it a value to check if
 
@@ -102,7 +102,7 @@ Once I have the constraint, I give it a value to check if
 
 I can do this all in one step.
 
-	Data::Constraints->get_by_name( $name )->check( $value );
+	Data::Constraint->get_by_name( $name )->check( $value );
 
 =head2 Predefined constraints
 
