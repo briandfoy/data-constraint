@@ -10,7 +10,7 @@
 
 =for HTML <a href="https://github.com/briandfoy/data-constraint/blob/master/LICENSE"><img src="https://img.shields.io/cpan/l/Data-Constraint.svg" /></a>
 
-=for HTML <a href="http://www.metacpan.org/module/Data::Constraint"><img src="https://img.shields.io/cpan/v/Data-Constraint.svg" /></A>
+=for HTML <a href="https://metacpan.org/pod/Data::Constraint"><img src="https://img.shields.io/cpan/v/Data-Constraint.svg" /></A>
 
 =head1 The Data::Constraint module
 
@@ -23,7 +23,7 @@ for any Perl module.
 
 To read about L<Data::Constraint>, look at the embedded documentation
 in the module itself. Inside the distribution, you can format it
-with L<perldoc|http://perldoc.perl.org/perldoc.html>:
+with L<perldoc|https://perldoc.perl.orgperldoc.html>:
 
 	% perldoc lib/Data/Constraint.pm
 
@@ -33,7 +33,7 @@ name instead of the file location:
 	% perldoc Data::Constraint
 
 You can read the documentation and inspect the meta data on
-L<MetaCPAN|http://www.metacpan.org/module/Data::Constraint>.
+L<MetaCPAN|https://metacpan.org/pod/Data::Constraint>.
 
 The standard module documentation has example uses in the SYNOPSIS
 section, but you can also look in the I<examples/> directory (if it's
