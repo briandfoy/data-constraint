@@ -106,26 +106,9 @@ I can do this all in one step.
 
 =head2 Predefined constraints
 
-=over 4
-
-=item defined
-
-True if the value is defined.
-
-=item ordinal
-
-True if the value is an ordinal number, also known as a strictly
-positive integer, which means it only has digit characters [0-9].
-
-=item true
-
-True if the value is true.  That's a lot of work to find out just
-that since I could just use the value itself.  This trivial constraints
-sticks with the metaphor though.  It still returns only true or
-false, so the value I get back will be true if the value is true,
-but it won't be the value I started with, necessarily.
-
-=back
+I previously had some pre-loaded contraints (C<defined>, C<ordinal>,
+and C<test>) but that got in the way of things that didn't want them.
+You can still find them defined in the test files though.
 
 =head2 Adding a new constraint
 
@@ -265,23 +248,6 @@ __PACKAGE__->reflect->addSlots(
 
 	description => sub { "" },
 	run         => sub { 1  },
-	);
-
-__PACKAGE__->add_constraint(
-	'defined',
-	'run'         => sub { defined $_[1] },
-	'description' => 'True if the value is defined',
-	);
-
-__PACKAGE__->add_constraint(
-	'ordinal',
-	'run'         => sub { $_[1] =~ /^\d+\z/ },
-	'description' => 'True if the value is has only digits',
-	);
-
-__PACKAGE__->add_constraint(
-	'test',
-	'run' => sub { 1 },
 	);
 
 =head1 SOURCE AVAILABILITY
