@@ -1,5 +1,9 @@
 Revision history for Perl module Data::Constraint
 
+1.171_01 2020-11-06T06:11:45Z
+	* Remove the default constraints (but they show up in the test files)
+	* A couple of typos in the docs (GitHub #1, tobyink)
+
 1.171 2018-06-03T14:07:44Z
 	* Change to the Artistic License 2.0
 
