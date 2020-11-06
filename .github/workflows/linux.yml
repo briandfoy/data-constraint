@@ -46,10 +46,10 @@ jobs:
               run: |
                 curl -L https://cpanmin.us | perl - App::cpanminus
                 cpanm IO::Socket::SSL
-                cpan -M  www.cpan.org ExtUtils::MakeMaker
+                cpan -M https://www.cpan.org ExtUtils::MakeMaker
             - name: Install dependencies
               run: |
-                cpan -M  www.cpan.org .
+                cpan -M https://www.cpan.org .
             - name: Run tests
               run: |
                 perl Makefile.PL
