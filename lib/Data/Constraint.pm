@@ -154,7 +154,7 @@ You wish!  This module can't help you there.
 
 =cut
 
-our $VERSION = '1.171_01';
+our $VERSION = '1.201';
 
 use base qw(Class::Prototyped);
 
