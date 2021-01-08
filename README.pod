@@ -2,8 +2,6 @@
 
 =encoding utf8
 
-=for HTML <a href="https://travis-ci.org/briandfoy/data-constraint"><img src="https://travis-ci.org/briandfoy/data-constraint.svg?branch=master" /></a>
-
 =for HTML <a href='https://ci.appveyor.com/project/briandfoy/data-constraint'><img src='https://ci.appveyor.com/api/projects/status/j9ce6dt5p2wbb5ps' /></a>
 
 =for HTML <a href='https://coveralls.io/github/briandfoy/data-constraint?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/data-constraint/badge.svg?branch=master' alt='Coverage Status' /></a>
