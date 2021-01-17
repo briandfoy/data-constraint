@@ -1,5 +1,8 @@
 Revision history for Perl module Data::Constraint
 
+1.202 2021-01-17T11:56:05Z
+	* freshen distro, remove Travis CI, add Github Actions
+
 1.171_01 2020-11-06T06:11:45Z
 	* Remove the default constraints (but they show up in the test files)
 	* A couple of typos in the docs (GitHub #1, tobyink)
